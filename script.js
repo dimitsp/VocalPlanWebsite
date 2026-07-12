@@ -128,4 +128,31 @@ document.addEventListener('DOMContentLoaded', () => {
             option.classList.add('selected');
         });
     });
+
+    // Image Modal Logic
+    const modal = document.getElementById("image-modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close-modal");
+    const archImages = document.querySelectorAll(".arch-img");
+
+    archImages.forEach(img => {
+        img.addEventListener("click", function() {
+            modal.classList.add("show");
+            modalImg.src = this.src;
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+            modal.classList.remove("show");
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", function(e) {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+    }
 });
