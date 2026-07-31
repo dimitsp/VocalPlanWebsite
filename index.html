@@ -23,7 +23,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="assets/icon.jpg" alt="VocaPlan Icon" class="nav-icon">
+                <img src="assets/icon.jpg" alt="VocalPlan Icon" class="nav-icon">
                 <span>VocalPlan</span>
             </div>
             <ul class="nav-links">
@@ -43,7 +43,7 @@
                     calendar management across languages.</p>
                 <div class="hero-buttons">
                     <button class="btn-primary" id="hero-get-access">Get Early Access</button>
-                    <button class="btn-secondary">View Documentation</button>
+                    <button class="btn-secondary" id="hero-view-docs">View Documentation</button>
                 </div>
             </div>
             <div class="hero-visual">
@@ -200,6 +200,56 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Screen 3: Login -->
+                    <div class="app-screen hidden-right" id="screen-login">
+                        <div class="login-header">
+                            <div class="app-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> WELCOME BACK</div>
+                            <h2>Log In to Sync</h2>
+                            <p>Enter your details to access your appointments.</p>
+                        </div>
+
+                        <div class="setup-form">
+                            <div class="form-group">
+                                <label>EMAIL ADDRESS</label>
+                                <div class="input-icon-wrapper">
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    <input type="email" placeholder="you@example.com" class="app-input with-icon">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>PASSWORD</label>
+                                <div class="input-icon-wrapper">
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                    <input type="password" placeholder="••••••••" class="app-input with-icon">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screen-footer">
+                            <button class="app-btn-primary" id="btn-sign-in">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                                Sign In
+                            </button>
+                            
+                            <div class="divider">
+                                <span>OR CONTINUE WITH</span>
+                            </div>
+                            
+                            <button class="app-btn-secondary google-btn">
+                                <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                                </svg>
+                                Google
+                            </button>
+                            
+                            <p class="signup-link">Don't have an account? <a href="#">Sign up now</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -235,16 +285,82 @@
 
         <section class="architecture" id="architecture">
             <div class="architecture-content">
-                <h2>Hybrid AI Architecture</h2>
-                <p>VocalPlan processes natural language via a highly optimized local-to-cloud AI cascade. Offline
-                    functionality ensures you stay connected, while detailed routing logs and a dedicated AI dashboard
-                    provide transparency regarding model latency and cost efficiency.</p>
+                <h2>Technical Architecture & Core Functionalities</h2>
+                <p>VocaPlan is a local-first, offline-capable AI-powered appointment and calendar management application built primarily for Android, with a web-compatible fallback.</p>
             </div>
-            <div class="architecture-visuals">
-                <img src="assets/blueprint1.png" alt="VocaPlan Blueprint 1" class="arch-img hover-zoom">
-                <img src="assets/blueprint2.png" alt="VocaPlan Blueprint 2" class="arch-img hover-zoom">
-                <img src="assets/blueprint3.png" alt="VocaPlan Blueprint 3" class="arch-img hover-zoom">
-                <img src="assets/blueprint4.png" alt="VocaPlan Blueprint 4" class="arch-img hover-zoom">
+            
+            <div class="architecture-hero-video glass-card hover-glow">
+                <video src="assets/animations/animation-data-flows.mp4" autoplay loop muted playsinline></video>
+            </div>
+            
+            <div class="report-section">
+                <h3 class="report-title">Core Functionalities</h3>
+                <div class="report-grid">
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Calendar Management</h4>
+                        <p>Week, Month, and Agenda views with full CRUD capabilities. Complex scheduling, recurring events, multi-day support, and per-instance deletion without breaking chains. Features color-coding, reminders, and "auto-done".</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>AI Extraction Engine</h4>
+                        <p>Processes requests via voice commands, text inputs, audio files, images (like photos of a schedule), and document uploads up to 10 MB.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Voice Processing</h4>
+                        <p>Utilizing native Android SpeechRecognizer for standard transcriptions and "agenda command mode" for higher-level commands.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Smart Enhancements</h4>
+                        <p>Intelligent titles based on participants and location, AI-fetched national holiday overlays, and geolocation weather widget.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Localization</h4>
+                        <p>Dark/light modes with six accent colors, multi-language support, 12h/24h time toggles, and strict IANA timezone awareness.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture-visuals-grid">
+                <img src="assets/blueprints/blueprint1.png" alt="VocalPlan Blueprint 1" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint2.png" alt="VocalPlan Blueprint 2" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint3.png" alt="VocalPlan Blueprint 3" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint4.png" alt="VocalPlan Blueprint 4" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint5.png" alt="VocalPlan Blueprint 5" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint6.png" alt="VocalPlan Blueprint 6" class="arch-img hover-zoom">
+            </div>
+
+            <div class="report-section">
+                <h3 class="report-title">Technical Architecture</h3>
+                <div class="report-grid">
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Frontend Layer</h4>
+                        <p>UI is built using React 18 and TypeScript, bundled with Vite, and styled with Vanilla CSS. Dates are handled using date-fns.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Mobile Native Bridge</h4>
+                        <p>Android app uses Capacitor 6 bridging web frontend with native capabilities. Plugins for Firebase Auth, SQLite-backed local storage, and Android AICore.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Backend & Cloud</h4>
+                        <p>Serverless backend built with Node.js and hosted on Google Cloud Run. Leverages Firestore for persistence and Gemini 3.5 Flash for AI processing.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>AI Routing Pipeline</h4>
+                        <p>Hybrid routing attempts local processing via Android AICore/local NLP first, falling back to cloud-based Gemini 3.5 Flash for heavier tasks like image/document parsing.</p>
+                    </div>
+                    <div class="report-card glass-card hover-glow">
+                        <h4>Security & Deployment</h4>
+                        <p>Firebase Auth persists locally. Validated server-side. Advanced endpoints require premium. Compiled via Gradle, deployed to Firebase EU region.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="architecture-visuals-grid">
+                <img src="assets/blueprints/blueprint7.png" alt="VocalPlan Blueprint 7" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint8.png" alt="VocalPlan Blueprint 8" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint9.png" alt="VocalPlan Blueprint 9" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint10.png" alt="VocalPlan Blueprint 10" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint11.png" alt="VocalPlan Blueprint 11" class="arch-img hover-zoom">
+                <img src="assets/blueprints/blueprint12.png" alt="VocalPlan Blueprint 12" class="arch-img hover-zoom">
             </div>
         </section>
 
@@ -255,31 +371,34 @@
             </div>
             <div class="gallery-grid">
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen1.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen1.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen2.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen2.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen3.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen3.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen4.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen4.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen5.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen5.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen6.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen6.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen7.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen7.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen8.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen8.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
                 </div>
                 <div class="glass-card gallery-card">
-                    <img src="assets/screen9.jpg" alt="VocaPlan Mobile Interface" class="gallery-img">
+                    <img src="assets/App%20UI/screen9.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
+                </div>
+                <div class="glass-card gallery-card horizontal-card">
+                    <img src="assets/App%20UI/screen10.jpg" alt="VocalPlan Offline Mode Interface" class="gallery-img">
                 </div>
             </div>
         </section>
@@ -288,12 +407,24 @@
     <footer>
         <div class="footer-content">
             <div class="logo">
-                <img src="assets/icon.jpg" alt="VocaPlan Icon" class="nav-icon">
+                <img src="assets/icon.jpg" alt="VocalPlan Icon" class="nav-icon">
                 <span>VocalPlan</span>
             </div>
             <p>&copy; 2026 VocalPlan Inc. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <!-- Document Modal -->
+    <div id="doc-modal" class="image-modal">
+        <span class="close-modal" id="close-doc-modal">&times;</span>
+        <iframe class="modal-content doc-iframe" id="doc-iframe" src=""></iframe>
+    </div>
 
     <script src="script.js"></script>
 </body>
