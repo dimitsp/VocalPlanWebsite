@@ -1,0 +1,45 @@
+﻿=== SLIDE: slide_01.png ===
+Engineering AgendOS VocalP1an: The intelligent calendar operating system. Built on React 19, TypeScript, and Capacitor 8. Architected for zero-latency UI, offline reliability , and multimodal intelligence . Getnini Notebook
+
+=== SLIDE: slide_02.png ===
+The Wrapper User Cloud API Database Cloud-dependent AI scheduling suffers from latency, offline failure, and data privacy vulnerabilities. The AgendOS Solution User Local Failover Parallel Processing Module Isolated Storage Vault Local Intelligence Data Sync Hub Push intelligence to the edge, treat the network as an enhancement rather than a dependency, and adopt a zero-trust security posture. Getnini Notebook
+
+=== SLIDE: slide_03.png ===
+The VocalPlan system topology React 19 Capacitor 8 UID-Scoped DB HTTPS J Bearer JWT HTTPS / Bearer JWT 69 Native Audio Chrome window. ai Express 4.22 RS256 Verification Rate Limiting Gemini 2.5 Flash Semantic Hash Cache Ganini Notebook
+
+=== SLIDE: slide_04.png ===
+Three foundational pillars of architecture 3 I. Multimodal Intelligence Hybrid AI routing, semantic caching, and hands-free accessibility. 11. Local -First 111. Zero-Trust Reliability Optimistic IJI, offline synchronization queues, and deterministic edge rendering. Security Cryptographic JWT validation, strict data isolation, and robust sanitization. Ganini Notebook
+
+=== SLIDE: slide_05.png ===
+. webm , Multimodal ingestion handles continuous inputs 11 .wav, mic streams PNG , csv Voice engine understands relative time expressions natively . PDF .js & Audio Pie-Processor Engine Multi-page PDF parsing via web workers extracts calendar events from flight itineraries, invitations, and medical slips. Canvas-based image compression optimizes network bandwidth prior to transmission. Getnini Notebook
+
+=== SLIDE: slide_06.png ===
+Hybrid intelligence routing matrix The Routing Matrix Path Android AICore Chrome window. ai Deterministic NLP Cloud Gemini 2.5 Flash Environment On-Device Mobile On-Device Web Client-Side Code Secure Proxy Latency Zero Zero Sub-millisecond Network- dependent Supported Hardware Web Nano Basic Text Complex Multimodal Cost/Privacy Free / Private Free / Private Free / Private API Cost Ganini Notebook
+
+=== SLIDE: slide_07.png ===
+Semantic Hash Caching intercepts redundant queries Schedule dentist next Tuesday Instant Cached Response SHA-256 Hash Filter Gemini 2.5 Flash Model Computes SHA-256 hashes of queries and multimodal inputs to return instant cached responses, bypassing API consumption entirely. Ganini Notebook
+
+=== SLIDE: slide_08.png ===
+The accessibility and verbal confirmation loop Input Execution User Confirmation Yes 1_ O)) • System synthesizes spoken prompts: "Should I Process reschedule Team Sync to Thursday at 10 AM?" Requires deterministic • spoken "Yes" or "No" before executing local database writes. Ensures visually impaired or • driving users operate with zero accidental data loss. Synthesis Ganini Notebook
+
+=== SLIDE: slide_09.png ===
+Local-first architecture guarantees zero latency The Offline Bucket Thursday 2023 Team syr,q Ttwrsda•,• 10 AM vocalp1an_appointments_<UID> • Immediate optimistic UI execution via IndexedDB and scoped localStorage. O Add Event pending_save pending_delete pending_delete x Sync Queue Bucket Connectivity Sensor • Network monitor (@capacitor/network) holds mutations as pending _ save or pending_delete during offline states. Ganini Notebook
+
+=== SLIDE: slide_10.png ===
+Atomic synchronization and conflict reconciliation Reconciliation Engine Sync Queue Bucket pending_save: { id: 'A-123', pending—delete: ld: 'B-456•, pending_save: id: 'B-456', Cloud API OPE Con nectivity Sensor local: updatedAt local: createdAt ATOMIC BATCH SYNC server: server: updatedAt createdAt Resolved Conflict State Update Server AUTOMATED TRIGGER Automated transition triggers when •ecapacitor/network' detects connectivity restoration. Atomic batch synchronization dispatches the queue to /apL/appoin tments / sync), CONFLICT RESOLUTION Conflict resolution engine compares local and server timestamps to prevent data overwrites. Ganini Notebook
+
+=== SLIDE: slide_11.png ===
+Enforcing a strict zero-trust client model Google Public Certificate Authority The Zero-Trust Security Lock Express Gateway Client Claims token payload UID-Scoped Database • Cryptographic RS256 Backend JWT Verification. • Express server validates algorithm, issuer, expiration, and dynamic certificates independently. • Client storage and database records are strictly isolated by Firebase uid. Ganini Notebook
+
+=== SLIDE: slide_12.png ===
+Defense-in-depth across the application stack Prototype Pollution / Object Injection sanit izeAppointment() and enforces a strict strips _proto 20-field whitelist. Denial of Service (DOS) Dual-tier rate limiting (600 req/15min general; 45 req/min AI endpoints) . Fjiters threshold Layer IP threshold Cross-Site Scripting kØ (XSS) x Helmet Content Security Policy enforces script—src 'self' . Q In-App Purchase C Replay Attacks Server computes SHA-256 hashes of Play Store receipt tokens to block reuse across multiple accounts. Ganini Notebook
+
+=== SLIDE: slide_13.png ===
+The full capability grid of AgendOS Voice 8 Al Multimodal Scheduler Documen Scanner v Smart Title Suggestion Verbal Confirmation Hybrid Al Monitor Offline Queue .ics/.csv Import & Export Calendar Multi-Perspective Views Vacation Spans Security & System Firebase Identity Firebase Weather Integration Recurrence Engine National Holidays p Color Categorization Storage & Sync Local-First Core Soft-Delete Recycle Bin Zero-Trust RS256 Exact Alarms Multilingual Localization Ganini Notebook
+
+=== SLIDE: slide_14.png ===
+User speaks a command. Pillar I (Intelligence): Processed locally via device NLP/Nano. Pillar 11 (Reliability): Saved instantly to Optimistic Ul/lndexedDB. Connectivity returns. Pillar Ill (Security): Payload cryptographically signed and synced to the secure backend. Multimodal Intelligence + Local-First Reliability + Zero-Trust Security Complex deterministic architecture designed to deliver an invisible, flawless user experience under worst-case conditions Ganini Notebook
+
+=== SLIDE: slide_15.png ===
+The architectural roadmap for VocalPlan End-to-End Encryption (E2EE) SQLite Transaction Safety Migrating Android persistence to @capacitor-community/sqlite for ACID compliance on massive historical datasets. End-to-End Encryption (E2EE) Implementing client-side AES-GCM payload encryption prior to cloud sync for sensitive medical and legal scheduling. Real-Time Background State Integrating Firebase Cloud Messaging (FCM) to push background state reconciliations across multi-device ecosystems natively. Ganini Notebook
+

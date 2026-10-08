@@ -4,426 +4,1543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VocalPlan | The AI-Powered Planning Engine</title>
+    <title>VocalPlan | AgendOS — The Intelligent Calendar Operating System</title>
     <meta name="description"
-        content="VocalPlan is a cross-platform scheduling application built with advanced AI routing to manage tasks via local or cloud processing.">
+        content="VocalPlan AgendOS is an edge-first, intelligent calendar operating system engineered on React 19, TypeScript, and Capacitor 8 with hybrid on-device AI and zero-trust security.">
+    <meta name="keywords"
+        content="VocalPlan, AgendOS, Calendar Operating System, Edge AI, On-Device AI, Gemini Nano, Gemini 2.5 Flash, Zero-Trust, Local-First, Capacitor 8, React 19">
+    <link rel="icon" type="image/jpeg" href="assets/icon.jpg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <div class="background-effects">
+    <!-- Background Ambient Lighting & Grid Overlay -->
+    <div class="background-effects" aria-hidden="true">
+        <div class="grid-overlay"></div>
         <div class="glow-orb orb-1"></div>
         <div class="glow-orb orb-2"></div>
         <div class="glow-orb orb-3"></div>
+        <div class="glow-orb orb-4"></div>
     </div>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/icon.jpg" alt="VocalPlan Icon" class="nav-icon">
-                <span>VocalPlan</span>
+    <!-- Sticky Navigation -->
+    <header id="main-header">
+        <nav class="nav-container">
+            <a href="#home" class="logo" id="nav-brand-logo">
+                <img src="assets/icon.jpg" alt="VocalPlan AgendOS Logo" class="nav-icon">
+                <div class="logo-text">
+                    <span class="brand-name">VocalPlan</span>
+                    <span class="sub-brand">AgendOS</span>
+                </div>
+            </a>
+
+            <div class="nav-links-wrapper" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#paradigm" class="nav-link">Paradigm Shift</a></li>
+                    <li><a href="#pillars" class="nav-link">Pillars</a></li>
+                    <li><a href="#topology" class="nav-link">Topology</a></li>
+                    <li><a href="#multimodal" class="nav-link">Multimodal</a></li>
+                    <li><a href="#routing" class="nav-link">Routing</a></li>
+                    <li><a href="#local-sync" class="nav-link">Local-First</a></li>
+                    <li><a href="#security" class="nav-link">Zero-Trust</a></li>
+                    <li><a href="#capabilities" class="nav-link">Capabilities</a></li>
+                    <li><a href="#deck-explorer" class="nav-link">Deck</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#architecture">Architecture</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn-primary" id="btn-open-deck-modal" title="View 15-Slide Architecture Deck">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span>Architecture Deck</span>
+                </button>
+                <button class="mobile-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <span class="badge">Intelligent Agenda Management</span>
-                <h1>Master your time with <br><span class="text-gradient">Voice-First Planning</span></h1>
-                <p>Speak your appointments naturally, visualize your schedule intelligently, and experience seamless
-                    calendar management across languages.</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary" id="hero-get-access">Get Early Access</button>
-                    <button class="btn-secondary" id="hero-view-docs">View Documentation</button>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge-row">
+                        <span class="hero-pill-badge">
+                            <span class="pulsing-dot"></span>
+                            Engineering AgendOS • React 19 • Capacitor 8
+                        </span>
+                        <span class="hero-tag">Zero-Latency Edge Architecture</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        The Calendar Operating System for the <br>
+                        <span class="gradient-text glow-text">Post-Cloud Era.</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Architected for <strong>zero-latency UI</strong>, <strong>100% offline reliability</strong>, and
+                        <strong>multimodal edge intelligence</strong>. Stop relying on fragile cloud wrappers—AgendOS
+                        pushes computation to the edge with deterministic failover and zero-trust security.
+                    </p>
+
+                    <!-- Trust / Specs Metric Grid -->
+                    <div class="hero-metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-value">0 <span class="metric-unit">ms</span></span>
+                            <span class="metric-label">Edge UI Execution Latency</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">100<span class="metric-unit">%</span></span>
+                            <span class="metric-label">Offline Mutation Reliability</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">Hybrid</span>
+                            <span class="metric-label">Gemini Nano + 2.5 Flash</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-value">RS256</span>
+                            <span class="metric-label">Cryptographic Zero-Trust Model</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#topology" class="btn-primary" id="hero-btn-explore">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 16 16 12 12 8"></polyline>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                            Explore Architecture
+                        </a>
+                        <a href="#deck-explorer" class="btn-secondary" id="hero-btn-slides">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            View 15 Architecture Slides
+                        </a>
+                        <button class="btn-glass" id="hero-btn-interactive-demo">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                            Simulate Voice Pipeline
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual: Blueprint & Interactive Phone Preview -->
+                <div class="hero-visual-wrapper">
+                    <div class="hero-deck-preview glass-card hover-glow" id="hero-deck-card">
+                        <div class="card-glass-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">Engineering AgendOS • Slide 01 / 15</span>
+                            <span class="badge-chip">React 19 • Cap 8</span>
+                        </div>
+                        <div class="slide-image-wrapper">
+                            <img src="assets/agendos/slide_01.webp" alt="Engineering AgendOS Cover Architecture"
+                                class="hero-slide-img zoomable-img" data-slide-index="0"
+                                data-title="Engineering AgendOS: VocalPlan">
+                            <div class="overlay-badge">Click to Inspect Architecture Deck</div>
+                        </div>
+                        <div class="card-footer-info">
+                            <span class="tech-tag">React 19</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Capacitor 8</span>
+                            <span class="tech-tag">Gemini Nano & 2.5 Flash</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="phone-screen" id="app-container">
-                        <!-- Screen 1: Welcome -->
-                        <div class="app-screen" id="screen-welcome">
-                            <div class="app-header">
-                                <div class="app-icon-wrapper">
-                                    <svg class="app-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
+        </section>
+
+        <!-- SECTION: THE PARADIGM SHIFT (Slide 2) -->
+        <section class="section-container" id="paradigm">
+            <div class="section-header-block">
+                <span class="section-kicker">Architectural Evolution</span>
+                <h2 class="section-headline">The Fragile Cloud Wrapper vs. The AgendOS Solution</h2>
+                <p class="section-lead">
+                    Conventional AI scheduling suffers from network latency, total offline failure, and severe data privacy vulnerabilities.
+                    AgendOS re-engineers calendar management from first principles.
+                </p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Legacy Cloud Wrapper -->
+                <div class="comparison-card legacy-card glass-card hover-glow">
+                    <div class="card-tag tag-legacy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                        </svg>
+                        The Naive Cloud Wrapper
+                    </div>
+                    <div class="flow-diagram-visual">
+                        <div class="flow-node">User</div>
+                        <div class="flow-arrow arrow-danger">── 800ms+ ──►</div>
+                        <div class="flow-node">Cloud API</div>
+                        <div class="flow-arrow arrow-danger">── Sync ──►</div>
+                        <div class="flow-node">Remote DB</div>
+                    </div>
+                    <ul class="comparison-list">
+                        <li class="danger-point">
+                            <strong>High Latency Bottleneck:</strong> Every keystroke or appointment requires an internet round-trip.
+                        </li>
+                        <li class="danger-point">
+                            <strong>Offline Catastrophe:</strong> Airplane mode, subway, or server downtime causes complete app freeze.
+                        </li>
+                        <li class="danger-point">
+                            <strong>Data Privacy Vulnerability:</strong> Sensitive personal and business itineraries transmitted in plaintext JSON.
+                        </li>
+                        <li class="danger-point">
+                            <strong>Single Point of Failure:</strong> Cloud API rate limits or outages disrupt personal schedules.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- AgendOS Solution -->
+                <div class="comparison-card agendos-card glass-card hover-glow">
+                    <div class="card-tag tag-agendos">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        The AgendOS Operating System
+                    </div>
+                    <div class="flow-diagram-visual">
+                        <div class="flow-node highlight">User</div>
+                        <div class="flow-arrow arrow-success">── 0ms Local ──►</div>
+                        <div class="flow-cluster">
+                            <span class="cluster-tag">Parallel Edge Module</span>
+                            <span class="cluster-tag">Isolated Storage Vault</span>
+                            <span class="cluster-tag">Local Intelligence</span>
+                        </div>
+                        <div class="flow-arrow arrow-success">── Sync Queue ──►</div>
+                        <div class="flow-node highlight">Data Sync Hub</div>
+                    </div>
+                    <ul class="comparison-list">
+                        <li class="success-point">
+                            <strong>Edge-First Execution:</strong> Zero-latency optimistic UI writes directly to local IndexedDB.
+                        </li>
+                        <li class="success-point">
+                            <strong>Network as Enhancement:</strong> Seamless offline mutations with automatic background queue reconciliation.
+                        </li>
+                        <li class="success-point">
+                            <strong>Zero-Trust Cryptography:</strong> Client storage partitioned strictly by Firebase UID with RS256 token verification.
+                        </li>
+                        <li class="success-point">
+                            <strong>Hybrid AI Intelligence:</strong> Gemini Nano and client NLP handle basic commands locally with zero API cost.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Slide 2 Blueprint Inspection Banner -->
+            <div class="blueprint-banner glass-card hover-glow">
+                <div class="blueprint-content">
+                    <div class="badge-chip">Slide 02 Blueprint</div>
+                    <h3>Push Intelligence to the Edge</h3>
+                    <p>Treat the network as an enhancement rather than a dependency, and adopt a strict zero-trust security posture.</p>
+                </div>
+                <div class="blueprint-thumb-box">
+                    <img src="assets/agendos/slide_02.webp" alt="AgendOS Solution Diagram" class="blueprint-thumb zoomable-img"
+                        data-slide-index="1" data-title="The Wrapper vs. The AgendOS Solution">
+                    <span class="inspect-hint">🔍 Click to inspect diagram</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: THREE FOUNDATIONAL PILLARS (Slide 4) -->
+        <section class="section-container" id="pillars">
+            <div class="section-header-block">
+                <span class="section-kicker">Core Philosophy</span>
+                <h2 class="section-headline">Three Foundational Pillars of Architecture</h2>
+                <p class="section-lead">
+                    Every design decision in AgendOS is anchored by three uncompromising principles of engineering excellence.
+                </p>
+            </div>
+
+            <div class="pillars-grid">
+                <!-- Pillar 1 -->
+                <div class="pillar-card glass-card hover-glow">
+                    <div class="pillar-number">I</div>
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Multimodal Intelligence</h3>
+                    <p class="pillar-subtitle">Adaptive Edge & Cloud Reasoning</p>
+                    <ul class="pillar-features">
+                        <li><strong>Hybrid AI Routing:</strong> Dynamic dispatch between Android AICore, Chrome window.ai, and Gemini 2.5 Flash.</li>
+                        <li><strong>Semantic Hash Caching:</strong> SHA-256 filter intercepts repetitive queries to deliver sub-millisecond cached responses.</li>
+                        <li><strong>Hands-Free Accessibility:</strong> Continuous voice ingestion with deterministic verbal confirmation loops for driving and accessibility.</li>
+                    </ul>
+                    <div class="pillar-footer">
+                        <span class="badge-sm">Gemini Nano</span>
+                        <span class="badge-sm">PDF.js Web Workers</span>
+                        <span class="badge-sm">SHA-256</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="pillar-card glass-card hover-glow">
+                    <div class="pillar-number">II</div>
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3>Local-First Reliability</h3>
+                    <p class="pillar-subtitle">Zero-Latency Optimistic State</p>
+                    <ul class="pillar-features">
+                        <li><strong>Optimistic UI:</strong> Instantaneous screen updates writing to UID-scoped local storage before network handshake.</li>
+                        <li><strong>Offline Sync Queues:</strong> <code>@capacitor/network</code> sensor holds pending mutations in resilient queue buckets.</li>
+                        <li><strong>Conflict Reconciliation:</strong> Timestamp-based comparison engine (<code>updatedAt</code> / <code>createdAt</code>) guarantees zero data loss.</li>
+                    </ul>
+                    <div class="pillar-footer">
+                        <span class="badge-sm">IndexedDB</span>
+                        <span class="badge-sm">@capacitor/network</span>
+                        <span class="badge-sm">Atomic Sync</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="pillar-card glass-card hover-glow">
+                    <div class="pillar-number">III</div>
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Zero-Trust Security</h3>
+                    <p class="pillar-subtitle">Cryptographic Defense-in-Depth</p>
+                    <ul class="pillar-features">
+                        <li><strong>RS256 JWT Verification:</strong> Independent gateway validation using dynamic Google Public CA certificates.</li>
+                        <li><strong>Strict Data Isolation:</strong> Every record partitioned at client and backend tiers by Firebase <code>uid</code>.</li>
+                        <li><strong>Defense-in-Depth:</strong> 20-field whitelist sanitization, Helmet CSP, receipt replay hashing, and dual-tier rate limiting.</li>
+                    </ul>
+                    <div class="pillar-footer">
+                        <span class="badge-sm">RS256</span>
+                        <span class="badge-sm">Helmet CSP</span>
+                        <span class="badge-sm">Rate Limiting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 Full View Card -->
+            <div class="slide-full-view glass-card hover-glow">
+                <img src="assets/agendos/slide_04.webp" alt="Three Foundational Pillars Architecture"
+                    class="slide-display-img zoomable-img" data-slide-index="3"
+                    data-title="Three Foundational Pillars of Architecture">
+                <div class="slide-caption-bar">
+                    <span class="caption-text">Slide 04: Three Foundational Pillars of VocalPlan AgendOS</span>
+                    <button class="btn-caption-inspect" data-slide-index="3">Inspect Full Slide</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SYSTEM TOPOLOGY & REAL-TIME DATA FLOWS (Slide 3, 14 & Video) -->
+        <section class="section-container" id="topology">
+            <div class="section-header-block">
+                <span class="section-kicker">System Architecture</span>
+                <h2 class="section-headline">The VocalPlan System Topology</h2>
+                <p class="section-lead">
+                    Built on React 19, TypeScript, and Capacitor 8 on the client; Express 4.22 with RS256 token verification at the gateway; and Gemini 2.5 Flash with Semantic Hash Caching at the AI layer.
+                </p>
+            </div>
+
+            <div class="topology-grid">
+                <!-- Left: Architecture Diagram from Slide 3 -->
+                <div class="topology-diagram-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 03 Architecture</span>
+                        <h4>End-to-End System Topology</h4>
+                    </div>
+                    <img src="assets/agendos/slide_03.webp" alt="VocalPlan System Topology Diagram"
+                        class="diagram-img zoomable-img" data-slide-index="2" data-title="The VocalPlan System Topology">
+                    <div class="topology-tags">
+                        <span class="tech-pill">React 19</span>
+                        <span class="tech-pill">Capacitor 8</span>
+                        <span class="tech-pill">Native Audio</span>
+                        <span class="tech-pill">window.ai</span>
+                        <span class="tech-pill">HTTPS / Bearer JWT</span>
+                        <span class="tech-pill">Express 4.22</span>
+                        <span class="tech-pill">RS256</span>
+                        <span class="tech-pill">Gemini 2.5 Flash</span>
+                        <span class="tech-pill">Semantic Cache</span>
+                    </div>
+                </div>
+
+                <!-- Right: Dynamic Architecture Video Flow -->
+                <div class="topology-video-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip pulsing-chip">Live Data Flow Stream</span>
+                        <h4>Dynamic Request & Event Ingestion</h4>
+                    </div>
+                    <div class="video-container">
+                        <video src="assets/animations/animation-data-flows.mp4" autoplay loop muted playsinline
+                            class="topology-video" id="arch-video" aria-label="System Data Flows Animation"></video>
+                        <div class="video-overlay-controls">
+                            <button class="video-toggle-btn" id="btn-toggle-video" aria-label="Pause or play data flows video">
+                                <span class="play-icon">▶</span>
+                                <span class="pause-icon">❚❚</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="topology-explainer">
+                        <p>
+                            Watch real-time flow execution: User audio and touch events dispatch concurrently to the local optimistic state engine and the hybrid AI parser, synchronizing across network states effortlessly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deterministic Execution Flow: Worst-Case Reliability Story (Slide 14) -->
+            <div class="execution-flow-section glass-card hover-glow">
+                <div class="section-subheading">
+                    <span class="badge-chip">Slide 14 Flow Analysis</span>
+                    <h3>The Worst-Case Deterministic Execution Story</h3>
+                    <p>How the 3 pillars coordinate when a user speaks a command during zero-connectivity conditions:</p>
+                </div>
+
+                <div class="execution-steps-grid">
+                    <div class="exec-step-card">
+                        <div class="step-badge">1. Offline Spoken Input</div>
+                        <div class="step-pillar-tag">Pillar I • Intelligence</div>
+                        <h4>Processed Locally</h4>
+                        <p>User speaks "Reschedule standup to 3 PM". Audio stream is processed on-device via device NLP & Gemini Nano. Zero round-trip needed.</p>
+                    </div>
+
+                    <div class="exec-step-connector">──►</div>
+
+                    <div class="exec-step-card">
+                        <div class="step-badge">2. Zero-Latency Write</div>
+                        <div class="step-pillar-tag">Pillar II • Reliability</div>
+                        <h4>Instant Optimistic State</h4>
+                        <p>Appointment is written directly to IndexedDB. UI updates at 0ms. Mutation placed into <code>Sync Queue Bucket</code> as <code>pending_save</code>.</p>
+                    </div>
+
+                    <div class="exec-step-connector">──►</div>
+
+                    <div class="exec-step-card">
+                        <div class="step-badge">3. Connectivity Restored</div>
+                        <div class="step-pillar-tag">Pillar III • Security</div>
+                        <h4>Cryptographic Atomic Sync</h4>
+                        <p><code>@capacitor/network</code> triggers batch sync to <code>/api/appointments/sync</code>. Bearer JWT verified via RS256 dynamic public certificates.</p>
+                    </div>
+                </div>
+
+                <div class="slide-embed-strip">
+                    <img src="assets/agendos/slide_14.webp" alt="Deterministic Worst-Case Execution Flow"
+                        class="slide-strip-img zoomable-img" data-slide-index="13"
+                        data-title="Deterministic Execution Flow">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: MULTIMODAL INGESTION & HANDS-FREE ENGINE (Slides 5, 7, 8) -->
+        <section class="section-container" id="multimodal">
+            <div class="section-header-block">
+                <span class="section-kicker">Multimodal Engine</span>
+                <h2 class="section-headline">Continuous Multimodal Ingestion & Hands-Free Safety</h2>
+                <p class="section-lead">
+                    Accepting continuous voice streams, multi-page flight PDFs, schedule camera photos, and calendar files—with instant semantic caching and hands-free verbal confirmation.
+                </p>
+            </div>
+
+            <div class="multimodal-trio-grid">
+                <!-- Slide 5: Continuous Ingestion -->
+                <div class="multimodal-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 05</span>
+                        <h4>Continuous Inputs</h4>
+                    </div>
+                    <img src="assets/agendos/slide_05.webp" alt="Multimodal Ingestion Pipeline"
+                        class="multimodal-img zoomable-img" data-slide-index="4"
+                        data-title="Multimodal Ingestion Handles Continuous Inputs">
+                    <div class="multimodal-body">
+                        <h5>Audio, Vision & Document Web Workers</h5>
+                        <ul>
+                            <li><strong>Voice Streams:</strong> <code>.webm</code>, <code>.wav</code>, and live mic streams. Voice engine understands relative time expressions (e.g., "next Tuesday after lunch") natively.</li>
+                            <li><strong>Multi-Page PDF Parsing:</strong> PDF.js running inside dedicated Web Workers extracts calendar events from flight itineraries, meeting invites, and medical slips.</li>
+                            <li><strong>Canvas Image Compression:</strong> Client-side canvas downsampling compresses schedule photos prior to cloud transmission to optimize network bandwidth.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 7: Semantic Hash Caching -->
+                <div class="multimodal-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 07</span>
+                        <h4>Semantic Hash Caching</h4>
+                    </div>
+                    <img src="assets/agendos/slide_07.webp" alt="Semantic Hash Caching Intercepts Queries"
+                        class="multimodal-img zoomable-img" data-slide-index="6"
+                        data-title="Semantic Hash Caching Intercepts Redundant Queries">
+                    <div class="multimodal-body">
+                        <h5>Sub-Millisecond Cache Interceptor</h5>
+                        <ul>
+                            <li><strong>SHA-256 Filter:</strong> Computes cryptographic hashes of incoming queries and multimodal inputs before sending them over the wire.</li>
+                            <li><strong>Zero Cloud Cost:</strong> Repeated prompts (e.g. "What is on my agenda tomorrow?") return instantly from memory.</li>
+                            <li><strong>Bypasses API Consumption:</strong> Drastically reduces latency and protects against cloud quota exhaustion.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 8: Accessibility & Verbal Confirmation Loop -->
+                <div class="multimodal-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 08</span>
+                        <h4>Verbal Confirmation Loop</h4>
+                    </div>
+                    <img src="assets/agendos/slide_08.webp" alt="The Accessibility and Verbal Confirmation Loop"
+                        class="multimodal-img zoomable-img" data-slide-index="7"
+                        data-title="The Accessibility and Verbal Confirmation Loop">
+                    <div class="multimodal-body">
+                        <h5>Deterministic Spoken Safeguard</h5>
+                        <ul>
+                            <li><strong>Speech Synthesis Prompt:</strong> System speaks back: <em>"Should I reschedule Team Sync to Thursday at 10 AM?"</em></li>
+                            <li><strong>Deterministic Confirmation:</strong> Requires explicit spoken "Yes" or "No" before executing local database writes.</li>
+                            <li><strong>Zero Accidental Loss:</strong> Designed specifically for driving safety and accessibility for visually impaired users.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE VOICE ENGINE SIMULATOR WIDGET -->
+            <div class="voice-simulator-container glass-card hover-glow" id="voice-sim-widget">
+                <div class="simulator-header">
+                    <div class="sim-title-group">
+                        <span class="badge-chip pulsing-chip">Interactive Demo</span>
+                        <h3>Test the Hands-Free Spoken Loop Live</h3>
+                        <p>Simulate how AgendOS handles voice commands, multimodal parsing, and spoken confirmation:</p>
+                    </div>
+                    <div class="audio-waveform-bars" id="audio-visualizer">
+                        <span class="bar"></span><span class="bar"></span><span class="bar"></span><span
+                            class="bar"></span><span class="bar"></span><span class="bar"></span><span
+                            class="bar"></span><span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="sim-workflow-box">
+                    <div class="sim-presets">
+                        <span class="preset-label">Choose sample command:</span>
+                        <button class="sim-preset-btn active" data-command="Schedule dental appointment next Tuesday at 3 PM">
+                            "Schedule dental appointment next Tuesday at 3 PM"
+                        </button>
+                        <button class="sim-preset-btn" data-command="Flight to Zurich on October 24th from 8 AM to 11 AM">
+                            "Flight to Zurich on Oct 24 from 8 to 11 AM"
+                        </button>
+                        <button class="sim-preset-btn" data-command="Reschedule client kickoff to Friday at 2 PM">
+                            "Reschedule client kickoff to Friday at 2 PM"
+                        </button>
+                    </div>
+
+                    <div class="sim-terminal">
+                        <div class="terminal-bar">
+                            <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                            <span class="term-title">AgendOS Voice & Intelligence Engine</span>
+                        </div>
+                        <div class="terminal-screen" id="sim-terminal-screen">
+                            <div class="term-line"><span class="prompt-sym">❯</span> System initialized. Microphone stream idle. Ready for voice input.</div>
+                        </div>
+                    </div>
+
+                    <div class="sim-controls">
+                        <button class="btn-primary" id="btn-simulate-voice">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                            <span>Simulate Spoken Input</span>
+                        </button>
+                        <div class="sim-confirm-buttons" id="sim-confirm-group" style="display: none;">
+                            <button class="btn-success" id="btn-sim-yes">Speak "Yes" (Confirm Write)</button>
+                            <button class="btn-danger" id="btn-sim-no">Speak "No" (Abort Mutation)</button>
+                        </div>
+                        <button class="btn-secondary" id="btn-sim-reset">Reset Pipeline</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: HYBRID INTELLIGENCE ROUTING MATRIX (Slide 6) -->
+        <section class="section-container" id="routing">
+            <div class="section-header-block">
+                <span class="section-kicker">Edge Decision Matrix</span>
+                <h2 class="section-headline">Hybrid Intelligence Routing Matrix</h2>
+                <p class="section-lead">
+                    AgendOS intelligently routes queries across four execution paths to minimize latency, eliminate API costs, and guarantee total privacy where possible.
+                </p>
+            </div>
+
+            <div class="matrix-layout">
+                <!-- Interactive Routing Table from Slide 6 -->
+                <div class="table-responsive glass-card hover-glow">
+                    <table class="routing-table">
+                        <thead>
+                            <tr>
+                                <th>Routing Path</th>
+                                <th>Environment</th>
+                                <th>Supported Hardware</th>
+                                <th>Latency</th>
+                                <th>Handled Tasks</th>
+                                <th>Cost & Privacy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row-highlight">
+                                <td>
+                                    <div class="path-badge"><span class="badge-dot dot-green"></span> Android AICore</div>
+                                </td>
+                                <td>On-Device Mobile</td>
+                                <td>Gemini Nano NPU</td>
+                                <td><span class="latency-zero">0 ms (Zero)</span></td>
+                                <td>Basic text, recurring rules, fast schedules</td>
+                                <td><span class="badge-free">Free • 100% Private</span></td>
+                            </tr>
+                            <tr class="row-highlight">
+                                <td>
+                                    <div class="path-badge"><span class="badge-dot dot-blue"></span> Chrome window.ai</div>
+                                </td>
+                                <td>On-Device Web</td>
+                                <td>Web Nano / Built-in AI</td>
+                                <td><span class="latency-zero">0 ms (Zero)</span></td>
+                                <td>Client browser schedule queries, title suggestions</td>
+                                <td><span class="badge-free">Free • 100% Private</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="path-badge"><span class="badge-dot dot-purple"></span> Deterministic NLP</div>
+                                </td>
+                                <td>Client-Side Code</td>
+                                <td>CPU / JS Engine</td>
+                                <td><span class="latency-sub">&lt; 1 ms</span></td>
+                                <td>Regex time parser, formatters, syntax normalization</td>
+                                <td><span class="badge-free">Free • 100% Private</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="path-badge"><span class="badge-dot dot-orange"></span> Cloud Gemini 2.5 Flash</div>
+                                </td>
+                                <td>Secure Proxy (Express)</td>
+                                <td>Google Cloud TPU/GPU</td>
+                                <td><span class="latency-net">Network-dependent</span></td>
+                                <td>Complex multimodal: multi-page PDF, audio streams, photo receipts</td>
+                                <td><span class="badge-cloud">Guarded API Cost</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Slide 6 Blueprint Card -->
+                <div class="routing-slide-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 06 Blueprint</span>
+                        <h4>The Routing Matrix Visual Specification</h4>
+                    </div>
+                    <img src="assets/agendos/slide_06.webp" alt="Hybrid Intelligence Routing Matrix"
+                        class="routing-img zoomable-img" data-slide-index="5"
+                        data-title="Hybrid Intelligence Routing Matrix">
+                    <p class="slide-note">
+                        Each input undergoes instant evaluation: Simple natural language is processed on-device for zero cost; complex binary documents route through the secure proxy.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LOCAL-FIRST ARCHITECTURE & CONFLICT RECONCILIATION (Slides 9, 10) -->
+        <section class="section-container" id="local-sync">
+            <div class="section-header-block">
+                <span class="section-kicker">Data Synchronization</span>
+                <h2 class="section-headline">Local-First Architecture & Conflict Reconciliation</h2>
+                <p class="section-lead">
+                    Guaranteed zero-latency UI through optimistic updates and scoped IndexedDB, combined with atomic batch synchronization and deterministic conflict resolution.
+                </p>
+            </div>
+
+            <div class="sync-grid">
+                <!-- Slide 9: Local-First Core -->
+                <div class="sync-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 09</span>
+                        <h4>Zero-Latency Local Bucket</h4>
+                    </div>
+                    <img src="assets/agendos/slide_09.webp" alt="Local-First Architecture Guarantees Zero Latency"
+                        class="sync-img zoomable-img" data-slide-index="8"
+                        data-title="Local-First Architecture Guarantees Zero Latency">
+                    <div class="sync-card-body">
+                        <h5>The Offline Bucket Architecture</h5>
+                        <p>
+                            Immediate optimistic UI execution via IndexedDB and scoped localStorage partition: <code>vocalplan_appointments_&lt;UID&gt;</code>.
+                        </p>
+                        <div class="queue-buckets-visual">
+                            <div class="queue-item save">pending_save: { id: "A-123" }</div>
+                            <div class="queue-item delete">pending_delete: { id: "B-456" }</div>
+                        </div>
+                        <p class="sub-text">
+                            The <code>@capacitor/network</code> connectivity sensor isolates mutations while offline, ensuring zero dropped user intents.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 10: Atomic Synchronization & Reconciliation -->
+                <div class="sync-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 10</span>
+                        <h4>Atomic Reconciliation Engine</h4>
+                    </div>
+                    <img src="assets/agendos/slide_10.webp" alt="Atomic Synchronization and Conflict Reconciliation"
+                        class="sync-img zoomable-img" data-slide-index="9"
+                        data-title="Atomic Synchronization and Conflict Reconciliation">
+                    <div class="sync-card-body">
+                        <h5>Conflict-Free State Consolidation</h5>
+                        <p>
+                            Upon network connection recovery, the synchronization engine triggers an atomic batch dispatch to <code>/api/appointments/sync</code>.
+                        </p>
+                        <div class="timestamp-comparison-box">
+                            <div class="ts-side">Local: <code>updatedAt</code>, <code>createdAt</code></div>
+                            <div class="ts-operator">VS</div>
+                            <div class="ts-side">Server: <code>updatedAt</code>, <code>createdAt</code></div>
+                        </div>
+                        <p class="sub-text">
+                            Deterministically resolves concurrent multi-device mutations without destructive overwrites or phantom deletions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ZERO-TRUST CLIENT MODEL & DEFENSE-IN-DEPTH (Slides 11, 12) -->
+        <section class="section-container" id="security">
+            <div class="section-header-block">
+                <span class="section-kicker">Enterprise Security</span>
+                <h2 class="section-headline">Zero-Trust Architecture & Stack Defense-in-Depth</h2>
+                <p class="section-lead">
+                    Enforcing an ironclad security posture: Cryptographic RS256 JWT validation, strict UID data isolation, and comprehensive protection against injection and replay attacks.
+                </p>
+            </div>
+
+            <div class="security-dual-grid">
+                <!-- Slide 11: Zero-Trust Model -->
+                <div class="sec-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 11</span>
+                        <h4>Zero-Trust Client Boundary</h4>
+                    </div>
+                    <img src="assets/agendos/slide_11.webp" alt="Enforcing a Strict Zero-Trust Client Model"
+                        class="sec-img zoomable-img" data-slide-index="10"
+                        data-title="Enforcing a Strict Zero-Trust Client Model">
+                    <div class="sec-card-body">
+                        <h5>Cryptographic RS256 Backend JWT Verification</h5>
+                        <ul class="sec-list">
+                            <li>
+                                <strong>Google Public CA Validation:</strong> Express server validates algorithm, issuer, expiration, and dynamic certificates independently against Google's public key authority.
+                            </li>
+                            <li>
+                                <strong>UID-Scoped Database Partitioning:</strong> Client storage and backend Firestore collections are strictly isolated by authenticated Firebase <code>uid</code>.
+                            </li>
+                            <li>
+                                <strong>Zero Client Privilege:</strong> Client-provided tokens cannot escalate permissions or access neighboring tenancy slots under any condition.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Slide 12: Defense-in-Depth -->
+                <div class="sec-card glass-card hover-glow">
+                    <div class="card-glass-header">
+                        <span class="badge-chip">Slide 12</span>
+                        <h4>Defense-in-Depth Stack</h4>
+                    </div>
+                    <img src="assets/agendos/slide_12.webp" alt="Defense-in-Depth Across the Application Stack"
+                        class="sec-img zoomable-img" data-slide-index="11"
+                        data-title="Defense-in-Depth Across the Application Stack">
+                    <div class="sec-card-body">
+                        <h5>Multi-Layered Hardening</h5>
+                        <div class="sec-defense-grid">
+                            <div class="defense-item">
+                                <span class="defense-icon">🛡️</span>
+                                <h6>Prototype Pollution Defense</h6>
+                                <p><code>sanitizeAppointment()</code> strips <code>__proto__</code> and enforces a strict 20-field whitelist.</p>
+                            </div>
+                            <div class="defense-item">
+                                <span class="defense-icon">⏱️</span>
+                                <h6>Dual-Tier Rate Limiting</h6>
+                                <p>600 req/15min on general APIs; strict 45 req/min on AI inference endpoints.</p>
+                            </div>
+                            <div class="defense-item">
+                                <span class="defense-icon">🔒</span>
+                                <h6>Content Security Policy</h6>
+                                <p>Helmet CSP locks down browser execution with strict <code>script-src 'self'</code>.</p>
+                            </div>
+                            <div class="defense-item">
+                                <span class="defense-icon">💳</span>
+                                <h6>Anti-Replay Attack Filter</h6>
+                                <p>Computes SHA-256 hashes of Play Store receipt tokens to block cross-account reuse.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: THE FULL CAPABILITY GRID (Slide 13) -->
+        <section class="section-container" id="capabilities">
+            <div class="section-header-block">
+                <span class="section-kicker">System Capabilities</span>
+                <h2 class="section-headline">The Full AgendOS Capability Grid</h2>
+                <p class="section-lead">
+                    20 production-grade capabilities engineered across Voice & AI, Calendar Management, Local Storage & Sync, and Enterprise Systems.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="capability-filter-bar">
+                <button class="cap-tab-btn active" data-category="all">All Capabilities (20)</button>
+                <button class="cap-tab-btn" data-category="voice-ai">Voice & AI</button>
+                <button class="cap-tab-btn" data-category="calendar">Calendar</button>
+                <button class="cap-tab-btn" data-category="storage-sync">Storage & Sync</button>
+                <button class="cap-tab-btn" data-category="security-sys">Security & System</button>
+            </div>
+
+            <!-- Capability Grid -->
+            <div class="capability-grid" id="cap-items-grid">
+                <!-- Group 1: Voice & AI -->
+                <div class="cap-card glass-card hover-glow" data-category="voice-ai">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill voice">Voice & AI</span>
+                        <span class="cap-code">AI-01</span>
+                    </div>
+                    <h4>Multimodal Scheduler</h4>
+                    <p>Parses voice commands, audio notes, photos of paper planners, and document attachments up to 10 MB.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="voice-ai">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill voice">Voice & AI</span>
+                        <span class="cap-code">AI-02</span>
+                    </div>
+                    <h4>Document Scanner</h4>
+                    <p>PDF.js inside Web Workers extracts flight confirmations, doctor notes, and PDF event schedules client-side.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="voice-ai">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill voice">Voice & AI</span>
+                        <span class="cap-code">AI-03</span>
+                    </div>
+                    <h4>Smart Title Suggestion</h4>
+                    <p>Generates context-aware appointment titles based on detected participants, locations, and semantic intent.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="voice-ai">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill voice">Voice & AI</span>
+                        <span class="cap-code">AI-04</span>
+                    </div>
+                    <h4>Verbal Confirmation Loop</h4>
+                    <p>Requires spoken "Yes/No" verification before committing destructive edits or reschedules, protecting drivers.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="voice-ai">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill voice">Voice & AI</span>
+                        <span class="cap-code">AI-05</span>
+                    </div>
+                    <h4>Hybrid AI Monitor</h4>
+                    <p>Dynamically switches between Gemini Nano on-device and Gemini 2.5 Flash on cloud depending on connectivity.</p>
+                </div>
+
+                <!-- Group 2: Calendar -->
+                <div class="cap-card glass-card hover-glow" data-category="calendar">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill calendar">Calendar</span>
+                        <span class="cap-code">CAL-01</span>
+                    </div>
+                    <h4>Multi-Perspective Views</h4>
+                    <p>Fluid Day, Week, Month, and Agenda perspective views with synchronized gestures and swipe transitions.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="calendar">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill calendar">Calendar</span>
+                        <span class="cap-code">CAL-02</span>
+                    </div>
+                    <h4>Vacation Spans</h4>
+                    <p>Dedicated multi-day range banners with automatic scheduling conflict suppression during holiday absences.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="calendar">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill calendar">Calendar</span>
+                        <span class="cap-code">CAL-03</span>
+                    </div>
+                    <h4>Recurrence Engine</h4>
+                    <p>Daily, weekly, monthly, and yearly recurring schedules with single-instance deletion without chain severance.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="calendar">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill calendar">Calendar</span>
+                        <span class="cap-code">CAL-04</span>
+                    </div>
+                    <h4>National Holidays</h4>
+                    <p>Dynamic overlays for national holiday calendars across Europe, Americas, and worldwide regions.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="calendar">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill calendar">Calendar</span>
+                        <span class="cap-code">CAL-05</span>
+                    </div>
+                    <h4>Color Categorization</h4>
+                    <p>Six distinct accent tags (work, medical, travel, personal, family, urgent) with quick color filtering.</p>
+                </div>
+
+                <!-- Group 3: Storage & Sync -->
+                <div class="cap-card glass-card hover-glow" data-category="storage-sync">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill storage">Storage & Sync</span>
+                        <span class="cap-code">ST-01</span>
+                    </div>
+                    <h4>Local-First Core</h4>
+                    <p>Sub-millisecond writes directly into IndexedDB and scoped localStorage partition before remote dispatch.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="storage-sync">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill storage">Storage & Sync</span>
+                        <span class="cap-code">ST-02</span>
+                    </div>
+                    <h4>Offline Queue Buckets</h4>
+                    <p>Captures all CRUD mutations during disconnection; dispatches in atomic batches when signal returns.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="storage-sync">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill storage">Storage & Sync</span>
+                        <span class="cap-code">ST-03</span>
+                    </div>
+                    <h4>Soft-Delete Recycle Bin</h4>
+                    <p>30-day reversible trash can preventing accidental loss with one-click restore and permanent purge.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="storage-sync">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill storage">Storage & Sync</span>
+                        <span class="cap-code">ST-04</span>
+                    </div>
+                    <h4>.ics & .csv Import / Export</h4>
+                    <p>Seamless interoperability with Google Calendar, Outlook, and Apple iCal through standard calendar feeds.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="storage-sync">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill storage">Storage & Sync</span>
+                        <span class="cap-code">ST-05</span>
+                    </div>
+                    <h4>Auto-Done Task Resolution</h4>
+                    <p>Intelligent status transitions marking passed events as complete, decluttering upcoming daily views.</p>
+                </div>
+
+                <!-- Group 4: Security & System -->
+                <div class="cap-card glass-card hover-glow" data-category="security-sys">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill security">Security & System</span>
+                        <span class="cap-code">SEC-01</span>
+                    </div>
+                    <h4>Zero-Trust RS256</h4>
+                    <p>Cryptographic JWT validation verifying RSA key pairs dynamically with Google's Public CA endpoint.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="security-sys">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill security">Security & System</span>
+                        <span class="cap-code">SEC-02</span>
+                    </div>
+                    <h4>Firebase Identity</h4>
+                    <p>Secure multi-provider authentication (Google OAuth, Email/Password) persisting across app restarts.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="security-sys">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill security">Security & System</span>
+                        <span class="cap-code">SYS-01</span>
+                    </div>
+                    <h4>Exact Alarms Engine</h4>
+                    <p>Native Android <code>AlarmManager</code> scheduling pinpoint local push notifications without battery drain.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="security-sys">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill security">Security & System</span>
+                        <span class="cap-code">SYS-02</span>
+                    </div>
+                    <h4>Geolocation Weather</h4>
+                    <p>Live forecast overlay integrated directly into schedule items to warn you of rain during outdoor meetings.</p>
+                </div>
+
+                <div class="cap-card glass-card hover-glow" data-category="security-sys">
+                    <div class="cap-card-header">
+                        <span class="cap-category-pill security">Security & System</span>
+                        <span class="cap-code">SYS-03</span>
+                    </div>
+                    <h4>Multilingual Localization</h4>
+                    <p>Full support in 6 languages (EN, DE, EL, ES, FR, IT) with IANA timezone awareness and 12h/24h formats.</p>
+                </div>
+            </div>
+
+            <!-- Slide 13 Blueprint Card -->
+            <div class="blueprint-banner glass-card hover-glow">
+                <div class="blueprint-content">
+                    <div class="badge-chip">Slide 13 Overview</div>
+                    <h3>The Complete AgendOS Matrix</h3>
+                    <p>Full visual layout of all 20 capabilities from the engineering presentation deck.</p>
+                </div>
+                <div class="blueprint-thumb-box">
+                    <img src="assets/agendos/slide_13.webp" alt="Full Capability Grid of AgendOS" class="blueprint-thumb zoomable-img"
+                        data-slide-index="12" data-title="The Full Capability Grid of AgendOS">
+                    <span class="inspect-hint">🔍 Click to inspect Slide 13</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ARCHITECTURE DECK EXPLORER (15 Slides) -->
+        <section class="section-container" id="deck-explorer">
+            <div class="section-header-block">
+                <span class="section-kicker">Technical Documentation</span>
+                <h2 class="section-headline">Interactive 15-Slide Architecture Deck</h2>
+                <p class="section-lead">
+                    Explore all 15 slides from the original <code>AgendOS_System_Architecture.pdf</code> presentation. Click any slide to view in high-resolution or open the interactive viewer.
+                </p>
+            </div>
+
+            <!-- Slide Viewer Stage -->
+            <div class="deck-viewer-stage glass-card hover-glow">
+                <div class="deck-viewer-toolbar">
+                    <div class="viewer-info">
+                        <span class="viewer-slide-number" id="deck-current-num">Slide 01 of 15</span>
+                        <span class="viewer-slide-title" id="deck-current-title">Engineering AgendOS: VocalPlan</span>
+                    </div>
+                    <div class="viewer-actions">
+                        <button class="deck-nav-btn" id="deck-prev-btn" title="Previous Slide">‹</button>
+                        <button class="deck-nav-btn" id="deck-next-btn" title="Next Slide">›</button>
+                        <button class="btn-primary-sm" id="btn-fullscreen-slide">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                            </svg>
+                            Full View
+                        </button>
+                        <button class="btn-secondary-sm" id="btn-open-pdf-doc" title="Open complete PDF">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Original PDF (16MB)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="deck-stage-viewport">
+                    <img src="assets/agendos/slide_01.webp" alt="Active Architecture Slide" id="deck-stage-img"
+                        class="deck-stage-image zoomable-img" data-slide-index="0"
+                        data-title="Engineering AgendOS: VocalPlan">
+                </div>
+
+                <!-- Slide Thumbnails Strip -->
+                <div class="deck-thumbs-carousel" id="deck-thumbs-track">
+                    <!-- Thumbnails generated dynamically in script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: INTERACTIVE APP INTERFACE & UI GALLERY -->
+        <section class="section-container" id="gallery">
+            <div class="section-header-block">
+                <span class="section-kicker">Visual Experience</span>
+                <h2 class="section-headline">Interactive App Experience & Interface Gallery</h2>
+                <p class="section-lead">
+                    Experience VocalPlan's sleek dark mode design, intuitive agenda navigation, and voice interaction flow.
+                </p>
+            </div>
+
+            <!-- Two-column interactive showcase -->
+            <div class="app-experience-showcase">
+                <!-- Left: Interactive Phone Mockup -->
+                <div class="phone-showcase-box">
+                    <div class="phone-mockup-frame">
+                        <div class="phone-speaker"></div>
+                        <div class="phone-screen" id="app-container">
+                            <!-- Screen 1: Welcome -->
+                            <div class="app-screen" id="screen-welcome">
+                                <div class="app-screen-header">
+                                    <div class="app-brand-badge">
+                                        <img src="assets/icon.jpg" alt="Icon" class="app-mini-icon">
+                                        <span>VocalPlan</span>
+                                    </div>
+                                    <h3 class="app-heading">Intelligent Agenda Management</h3>
+                                    <p class="app-sub">Speak naturally. Visualize intelligently.</p>
                                 </div>
-                                <h2>VocalPlan</h2>
-                                <p>Intelligent Agenda Management</p>
-                            </div>
 
-                            <div class="mic-button-wrapper">
-                                <button class="mic-button">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                        <line x1="12" y1="19" x2="12" y2="23"></line>
-                                        <line x1="8" y1="23" x2="16" y2="23"></line>
-                                    </svg>
-                                </button>
-                                <div class="mic-pulse"></div>
-                            </div>
-
-                            <div class="feature-list">
-                                <div class="app-feature-card">
-                                    <div class="app-feature-icon">
+                                <div class="mic-button-wrapper">
+                                    <button class="mic-button" id="phone-mic-btn" aria-label="Microphone Button">
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                             <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
                                             <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                                             <line x1="12" y1="19" x2="12" y2="23"></line>
                                             <line x1="8" y1="23" x2="16" y2="23"></line>
                                         </svg>
+                                    </button>
+                                    <div class="mic-pulse"></div>
+                                </div>
+
+                                <div class="phone-feature-list">
+                                    <div class="phone-feature-card">
+                                        <span class="phone-feat-icon">🎙️</span>
+                                        <div>
+                                            <strong>Voice-First AI</strong>
+                                            <p>Speaks your schedule naturally.</p>
+                                        </div>
                                     </div>
-                                    <div class="app-feature-text">
-                                        <h4>Voice-First</h4>
-                                        <p>Speak your appointments naturally — AI understands you.</p>
+                                    <div class="phone-feature-card">
+                                        <span class="phone-feat-icon">📅</span>
+                                        <div>
+                                            <strong>Smart Calendar</strong>
+                                            <p>Month, week, agenda views.</p>
+                                        </div>
+                                    </div>
+                                    <div class="phone-feature-card">
+                                        <span class="phone-feat-icon">🌐</span>
+                                        <div>
+                                            <strong>6 Languages</strong>
+                                            <p>Global holidays & timezones.</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="app-feature-card">
-                                    <div class="app-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                                        </svg>
-                                    </div>
-                                    <div class="app-feature-text">
-                                        <h4>Smart Calendar</h4>
-                                        <p>Month, week, and agenda views with recurring events.</p>
-                                    </div>
-                                </div>
-                                <div class="app-feature-card">
-                                    <div class="app-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                                            <path
-                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                    <div class="app-feature-text">
-                                        <h4>Multilingual</h4>
-                                        <p>Works in 6 languages with holiday calendars worldwide.</p>
-                                    </div>
+
+                                <div class="phone-footer-actions">
+                                    <button class="app-btn-primary" id="btn-get-started">
+                                        Get Started <span>→</span>
+                                    </button>
+                                    <p class="phone-note">Your data stays local and private</p>
                                 </div>
                             </div>
 
-                            <div class="screen-footer">
-                                <button class="app-btn-primary" id="btn-get-started">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polygon
-                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                        </polygon>
-                                    </svg>
-                                    Get Started
-                                    <span>→</span>
-                                </button>
-                                <p class="privacy-note">Your data stays private and on-device</p>
-                            </div>
-                        </div>
-
-                        <!-- Screen 2: Quick Setup -->
-                        <div class="app-screen hidden-right" id="screen-setup">
-                            <div class="setup-header">
-                                <div class="app-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <polygon
-                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-                                        </polygon>
-                                    </svg> QUICK SETUP</div>
-                                <h2>Personalize<br>your experience</h2>
-                                <p>Just two quick things — you can always change these later.</p>
-                            </div>
-
-                            <div class="setup-form">
-                                <div class="form-group">
-                                    <label>YOUR NAME</label>
-                                    <input type="text" placeholder="e.g. Alex" class="app-input">
+                            <!-- Screen 2: Quick Setup -->
+                            <div class="app-screen hidden-right" id="screen-setup">
+                                <div class="setup-header">
+                                    <div class="app-badge">QUICK SETUP</div>
+                                    <h3>Personalize Experience</h3>
+                                    <p>Select your language preference:</p>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>PREFERRED LANGUAGE</label>
-                                    <div class="language-grid">
-                                        <div class="lang-option selected">
-                                            <span class="flag">🇺🇸</span> English
-                                            <div class="check-icon">
-                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="3" stroke-linecap="round">
-                                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                                </svg>
+                                <div class="setup-form">
+                                    <div class="form-group">
+                                        <label>YOUR NAME</label>
+                                        <input type="text" value="Alex" class="app-input" id="phone-user-name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>PREFERRED LANGUAGE</label>
+                                        <div class="language-grid">
+                                            <div class="lang-option selected" data-lang="en">
+                                                <span class="flag">🇺🇸</span> English
+                                                <span class="check-mark">✓</span>
+                                            </div>
+                                            <div class="lang-option" data-lang="de">
+                                                <span class="flag">🇩🇪</span> Deutsch
+                                            </div>
+                                            <div class="lang-option" data-lang="el">
+                                                <span class="flag">🇬🇷</span> Ελληνικά
+                                            </div>
+                                            <div class="lang-option" data-lang="es">
+                                                <span class="flag">🇪🇸</span> Español
+                                            </div>
+                                            <div class="lang-option" data-lang="fr">
+                                                <span class="flag">🇫🇷</span> Français
+                                            </div>
+                                            <div class="lang-option" data-lang="it">
+                                                <span class="flag">🇮🇹</span> Italiano
                                             </div>
                                         </div>
-                                        <div class="lang-option">
-                                            <span class="flag">🇩🇪</span> Deutsch
-                                        </div>
-                                        <div class="lang-option">
-                                            <span class="flag">🇬🇷</span> Ελληνικά
-                                        </div>
-                                        <div class="lang-option">
-                                            <span class="flag">🇪🇸</span> Español
-                                        </div>
-                                        <div class="lang-option">
-                                            <span class="flag">🇫🇷</span> Français
-                                        </div>
-                                        <div class="lang-option">
-                                            <span class="flag">🇮🇹</span> Italiano
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="screen-footer">
-                                <button class="app-btn-primary" id="btn-start-using">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                                        stroke-linecap="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Start Using VocalPlan
-                                </button>
-                                <p class="privacy-note">You can change all settings anytime in the sidebar</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Screen 3: Login -->
-                    <div class="app-screen hidden-right" id="screen-login">
-                        <div class="login-header">
-                            <div class="app-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> WELCOME BACK</div>
-                            <h2>Log In to Sync</h2>
-                            <p>Enter your details to access your appointments.</p>
-                        </div>
-
-                        <div class="setup-form">
-                            <div class="form-group">
-                                <label>EMAIL ADDRESS</label>
-                                <div class="input-icon-wrapper">
-                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                                    <input type="email" placeholder="you@example.com" class="app-input with-icon">
+                                <div class="phone-footer-actions">
+                                    <button class="app-btn-primary" id="btn-start-using">
+                                        Start Using VocalPlan <span>→</span>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label>PASSWORD</label>
-                                <div class="input-icon-wrapper">
-                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    <input type="password" placeholder="••••••••" class="app-input with-icon">
+                            <!-- Screen 3: Login -->
+                            <div class="app-screen hidden-right" id="screen-login">
+                                <div class="setup-header">
+                                    <div class="app-badge">IDENTITY SYNC</div>
+                                    <h3>Sign In to Sync</h3>
+                                    <p>Access your appointments anywhere.</p>
+                                </div>
+
+                                <div class="setup-form">
+                                    <div class="form-group">
+                                        <label>EMAIL</label>
+                                        <input type="email" value="alex@vocalplan.ai" class="app-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PASSWORD</label>
+                                        <input type="password" value="••••••••••••" class="app-input">
+                                    </div>
+                                </div>
+
+                                <div class="phone-footer-actions">
+                                    <button class="app-btn-primary" id="btn-sign-in">
+                                        Sign In
+                                    </button>
+                                    <button class="app-btn-secondary" id="btn-demo-google">
+                                        Continue with Google
+                                    </button>
+                                    <p class="phone-link-text">Return to <a href="#" id="link-back-welcome">Welcome</a></p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="screen-footer">
-                            <button class="app-btn-primary" id="btn-sign-in">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-                                Sign In
-                            </button>
-                            
-                            <div class="divider">
-                                <span>OR CONTINUE WITH</span>
+                <!-- Right: Gallery of Actual App Screenshots -->
+                <div class="app-gallery-box">
+                    <div class="gallery-category-bar">
+                        <button class="gal-cat-btn active" data-filter="all">All Screens</button>
+                        <button class="gal-cat-btn" data-filter="agenda">Agenda & Views</button>
+                        <button class="gal-cat-btn" data-filter="voice">Voice & Alarms</button>
+                        <button class="gal-cat-btn" data-filter="settings">Settings & Sync</button>
+                    </div>
+
+                    <div class="gallery-cards-grid" id="gallery-grid">
+                        <!-- Screen 1 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="settings">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen1.webp" alt="Welcome Onboarding Screen"
+                                    class="gallery-preview-img zoomable-img" data-title="Welcome & Onboarding">
                             </div>
-                            
-                            <button class="app-btn-secondary google-btn">
-                                <svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                                </svg>
-                                Google
-                            </button>
-                            
-                            <p class="signup-link">Don't have an account? <a href="#">Sign up now</a></p>
+                            <div class="gallery-item-meta">
+                                <h5>Welcome Onboarding</h5>
+                                <span class="tag-pill">UI 01</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 2 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="settings">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen2.webp" alt="Quick Setup Personalization"
+                                    class="gallery-preview-img zoomable-img" data-title="Personalize Experience & Language">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Personalize Experience</h5>
+                                <span class="tag-pill">UI 02</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 3 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="agenda">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen3.webp" alt="Agenda Daily Schedule"
+                                    class="gallery-preview-img zoomable-img" data-title="Agenda & Daily Schedule">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Daily Schedule Agenda</h5>
+                                <span class="tag-pill">UI 03</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 4 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="voice">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen4.webp" alt="Voice Recognition Modal"
+                                    class="gallery-preview-img zoomable-img" data-title="Voice Recognition & Prompt">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Spoken Command Mode</h5>
+                                <span class="tag-pill">UI 04</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 5 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="agenda">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen5.webp" alt="Month Calendar View"
+                                    class="gallery-preview-img zoomable-img" data-title="Monthly Calendar & Event Dots">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Monthly Perspective</h5>
+                                <span class="tag-pill">UI 05</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 6 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="agenda">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen6.webp" alt="Add & Edit Appointment Modal"
+                                    class="gallery-preview-img zoomable-img" data-title="Appointment Creator & Editor">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Event Creation Modal</h5>
+                                <span class="tag-pill">UI 06</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 7 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="settings">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen7.webp" alt="Settings & Theme Configuration"
+                                    class="gallery-preview-img zoomable-img" data-title="App Preferences & Multi-Language">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Preferences & Languages</h5>
+                                <span class="tag-pill">UI 07</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 8 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="agenda">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen8.webp" alt="Weather & Holiday Overlays"
+                                    class="gallery-preview-img zoomable-img" data-title="Live Weather & Holiday Integrations">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Weather & Holidays Overlay</h5>
+                                <span class="tag-pill">UI 08</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 9 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="settings">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen9.webp" alt="Recycle Bin & Recycle Soft Delete"
+                                    class="gallery-preview-img zoomable-img" data-title="Soft-Delete Recycle Bin">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Soft-Delete Recycle Bin</h5>
+                                <span class="tag-pill">UI 09</span>
+                            </div>
+                        </div>
+
+                        <!-- Screen 10 -->
+                        <div class="gallery-item-card glass-card hover-glow" data-category="settings">
+                            <div class="gallery-img-box">
+                                <img src="assets/App UI/screen10.webp" alt="Offline Mode & Sync Queue Status"
+                                    class="gallery-preview-img zoomable-img" data-title="Offline Mode Banner & Sync State">
+                            </div>
+                            <div class="gallery-item-meta">
+                                <h5>Offline Mode Banner</h5>
+                                <span class="tag-pill">UI 10</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="features" id="features">
-            <div class="section-header">
-                <h2>Intelligent Capabilities</h2>
-                <p>Designed for high performance, maximum flexibility, and superior user experience.</p>
+        <!-- SECTION: ARCHITECTURAL ROADMAP (Slide 15) -->
+        <section class="section-container" id="roadmap">
+            <div class="section-header-block">
+                <span class="section-kicker">Future Evolution</span>
+                <h2 class="section-headline">The Architectural Roadmap for VocalPlan</h2>
+                <p class="section-lead">
+                    Advancing toward enterprise-grade database transactions, zero-knowledge encryption, and instant background push notifications.
+                </p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card glass-card hover-glow">
-                    <div class="feature-icon">🎙️</div>
-                    <h3>Voice-First</h3>
-                    <p>Speak your appointments naturally — AI understands you and schedules them instantly.</p>
-                </div>
-                <div class="feature-card glass-card hover-glow">
-                    <div class="feature-icon">📅</div>
-                    <h3>Smart Calendar</h3>
-                    <p>Month, week, and agenda views with recurring events and automated conflict resolution.</p>
-                </div>
-                <div class="feature-card glass-card hover-glow">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Multilingual</h3>
-                    <p>Works flawlessly in 6 languages with built-in holiday calendars for regions worldwide.</p>
-                </div>
-                <div class="feature-card glass-card hover-glow">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Quick Setup</h3>
-                    <p>Personalize your experience in seconds with our streamlined, intuitive onboarding flow.</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="architecture" id="architecture">
-            <div class="architecture-content">
-                <h2>Technical Architecture & Core Functionalities</h2>
-                <p>VocaPlan is a local-first, offline-capable AI-powered appointment and calendar management application built primarily for Android, with a web-compatible fallback.</p>
-            </div>
-            
-            <div class="architecture-hero-video glass-card hover-glow">
-                <video src="assets/animations/animation-data-flows.mp4" autoplay loop muted playsinline></video>
-            </div>
-            
-            <div class="report-section">
-                <h3 class="report-title">Core Functionalities</h3>
-                <div class="report-grid">
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Calendar Management</h4>
-                        <p>Week, Month, and Agenda views with full CRUD capabilities. Complex scheduling, recurring events, multi-day support, and per-instance deletion without breaking chains. Features color-coding, reminders, and "auto-done".</p>
+            <div class="roadmap-grid">
+                <!-- Roadmap Item 1 -->
+                <div class="roadmap-card glass-card hover-glow">
+                    <div class="roadmap-badge milestone-1">Phase 1 • Near Term</div>
+                    <div class="roadmap-icon">🗄️</div>
+                    <h4>SQLite Transaction Safety</h4>
+                    <p class="roadmap-spec">
+                        Migrating Android persistence from standard key-value to <code>@capacitor-community/sqlite</code> for full ACID compliance and zero corruption on massive historical datasets exceeding 50,000+ entries.
+                    </p>
+                    <div class="roadmap-tags">
+                        <span>ACID Compliance</span>
+                        <span>SQLite Driver</span>
+                        <span>Large Datasets</span>
                     </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>AI Extraction Engine</h4>
-                        <p>Processes requests via voice commands, text inputs, audio files, images (like photos of a schedule), and document uploads up to 10 MB.</p>
+                </div>
+
+                <!-- Roadmap Item 2 -->
+                <div class="roadmap-card glass-card hover-glow">
+                    <div class="roadmap-badge milestone-2">Phase 2 • Mid Term</div>
+                    <div class="roadmap-icon">🔐</div>
+                    <h4>End-to-End Encryption (E2EE)</h4>
+                    <p class="roadmap-spec">
+                        Implementing client-side AES-GCM payload encryption before cloud sync. Guarantees zero-knowledge scheduling for confidential medical, legal, and executive calendar data.
+                    </p>
+                    <div class="roadmap-tags">
+                        <span>AES-GCM 256</span>
+                        <span>Zero-Knowledge</span>
+                        <span>HIPAA / GDPR Ready</span>
                     </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Voice Processing</h4>
-                        <p>Utilizing native Android SpeechRecognizer for standard transcriptions and "agenda command mode" for higher-level commands.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Smart Enhancements</h4>
-                        <p>Intelligent titles based on participants and location, AI-fetched national holiday overlays, and geolocation weather widget.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Localization</h4>
-                        <p>Dark/light modes with six accent colors, multi-language support, 12h/24h time toggles, and strict IANA timezone awareness.</p>
+                </div>
+
+                <!-- Roadmap Item 3 -->
+                <div class="roadmap-card glass-card hover-glow">
+                    <div class="roadmap-badge milestone-3">Phase 3 • Long Term</div>
+                    <div class="roadmap-icon">⚡</div>
+                    <h4>Real-Time Background State</h4>
+                    <p class="roadmap-spec">
+                        Integrating Firebase Cloud Messaging (FCM) to trigger background state reconciliations across multi-device ecosystems natively without battery drain.
+                    </p>
+                    <div class="roadmap-tags">
+                        <span>FCM Push</span>
+                        <span>Cross-Device Sync</span>
+                        <span>Zero Battery Drain</span>
                     </div>
                 </div>
             </div>
 
-            <div class="architecture-visuals-grid">
-                <img src="assets/blueprints/blueprint1.png" alt="VocalPlan Blueprint 1" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint2.png" alt="VocalPlan Blueprint 2" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint3.png" alt="VocalPlan Blueprint 3" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint4.png" alt="VocalPlan Blueprint 4" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint5.png" alt="VocalPlan Blueprint 5" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint6.png" alt="VocalPlan Blueprint 6" class="arch-img hover-zoom">
-            </div>
-
-            <div class="report-section">
-                <h3 class="report-title">Technical Architecture</h3>
-                <div class="report-grid">
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Frontend Layer</h4>
-                        <p>UI is built using React 18 and TypeScript, bundled with Vite, and styled with Vanilla CSS. Dates are handled using date-fns.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Mobile Native Bridge</h4>
-                        <p>Android app uses Capacitor 6 bridging web frontend with native capabilities. Plugins for Firebase Auth, SQLite-backed local storage, and Android AICore.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Backend & Cloud</h4>
-                        <p>Serverless backend built with Node.js and hosted on Google Cloud Run. Leverages Firestore for persistence and Gemini 3.5 Flash for AI processing.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>AI Routing Pipeline</h4>
-                        <p>Hybrid routing attempts local processing via Android AICore/local NLP first, falling back to cloud-based Gemini 3.5 Flash for heavier tasks like image/document parsing.</p>
-                    </div>
-                    <div class="report-card glass-card hover-glow">
-                        <h4>Security & Deployment</h4>
-                        <p>Firebase Auth persists locally. Validated server-side. Advanced endpoints require premium. Compiled via Gradle, deployed to Firebase EU region.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="architecture-visuals-grid">
-                <img src="assets/blueprints/blueprint7.png" alt="VocalPlan Blueprint 7" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint8.png" alt="VocalPlan Blueprint 8" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint9.png" alt="VocalPlan Blueprint 9" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint10.png" alt="VocalPlan Blueprint 10" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint11.png" alt="VocalPlan Blueprint 11" class="arch-img hover-zoom">
-                <img src="assets/blueprints/blueprint12.png" alt="VocalPlan Blueprint 12" class="arch-img hover-zoom">
-            </div>
-        </section>
-
-        <section class="gallery" id="gallery">
-            <div class="section-header">
-                <h2>Interface Gallery</h2>
-                <p>A closer look at VocalPlan's premium dark mode and intuitively crafted UI.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen1.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen2.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen3.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen4.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen5.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen6.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen7.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen8.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card">
-                    <img src="assets/App%20UI/screen9.jpg" alt="VocalPlan Mobile Interface" class="gallery-img">
-                </div>
-                <div class="glass-card gallery-card horizontal-card">
-                    <img src="assets/App%20UI/screen10.jpg" alt="VocalPlan Offline Mode Interface" class="gallery-img">
+            <!-- Slide 15 Blueprint Card -->
+            <div class="slide-full-view glass-card hover-glow">
+                <img src="assets/agendos/slide_15.webp" alt="The Architectural Roadmap for VocalPlan"
+                    class="slide-display-img zoomable-img" data-slide-index="14"
+                    data-title="The Architectural Roadmap for VocalPlan">
+                <div class="slide-caption-bar">
+                    <span class="caption-text">Slide 15: Architectural Roadmap Specification</span>
+                    <button class="btn-caption-inspect" data-slide-index="14">Inspect Roadmap Slide</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <img src="assets/icon.jpg" alt="VocalPlan Icon" class="nav-icon">
-                <span>VocalPlan</span>
+    <!-- FOOTER -->
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-top-row">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="assets/icon.jpg" alt="VocalPlan Logo" class="nav-icon">
+                        <span>VocalPlan <small class="brand-sub-badge">AgendOS</small></span>
+                    </div>
+                    <p class="footer-mission">
+                        The intelligent calendar operating system engineered for zero-latency edge performance, multimodal intelligence, and cryptographic privacy.
+                    </p>
+                    <div class="tech-stack-badges">
+                        <span class="pill-mini">React 19</span>
+                        <span class="pill-mini">Capacitor 8</span>
+                        <span class="pill-mini">TypeScript</span>
+                        <span class="pill-mini">Gemini 2.5 Flash</span>
+                        <span class="pill-mini">RS256</span>
+                    </div>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5>Architecture</h5>
+                    <ul>
+                        <li><a href="#paradigm">Paradigm Shift</a></li>
+                        <li><a href="#pillars">3 Foundational Pillars</a></li>
+                        <li><a href="#topology">System Topology</a></li>
+                        <li><a href="#routing">Routing Matrix</a></li>
+                        <li><a href="#local-sync">Local-First Sync</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5>Specifications</h5>
+                    <ul>
+                        <li><a href="#security">Zero-Trust RS256</a></li>
+                        <li><a href="#multimodal">Multimodal Engine</a></li>
+                        <li><a href="#capabilities">Capability Grid</a></li>
+                        <li><a href="#gallery">Interface Gallery</a></li>
+                        <li><a href="#roadmap">Technical Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-col">
+                    <h5>Documentation</h5>
+                    <ul>
+                        <li><button class="footer-text-btn" id="footer-btn-open-deck">Architecture Deck (15 Slides)</button></li>
+                        <li><button class="footer-text-btn" id="footer-btn-open-summary">Executive Summary (PDF)</button></li>
+                        <li><a href="assets/Files/AgendOS_System_Architecture.pdf" download="AgendOS_System_Architecture.pdf">Download Architecture PDF (16MB)</a></li>
+                        <li><a href="assets/Files/Executive Summary VocalPlan Platform Overview.pdf" download="Executive Summary VocalPlan.pdf">Download Exec Overview (PDF)</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2026 VocalPlan Inc. All rights reserved.</p>
+
+            <div class="footer-bottom-row">
+                <p>&copy; 2026 VocalPlan Inc. • AgendOS Operating System. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <span>Zero-Trust Protocol</span>
+                    <span>•</span>
+                    <span>Local-First Standard</span>
+                    <span>•</span>
+                    <span>Cryptographic Verification</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Fullscreen Image Modal -->
-    <div id="image-modal" class="image-modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modal-img">
+    <!-- LIGHTBOX MODAL: FULL RESOLUTION SLIDE & SCREEN INSPECTOR -->
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-label="Media Lightbox">
+        <div class="modal-backdrop-blur"></div>
+        <div class="lightbox-container">
+            <div class="lightbox-header">
+                <span class="lightbox-title" id="modal-img-title">Slide Specification</span>
+                <div class="lightbox-actions">
+                    <button class="btn-lightbox-nav" id="btn-lightbox-prev" title="Previous Item">‹</button>
+                    <button class="btn-lightbox-nav" id="btn-lightbox-next" title="Next Item">›</button>
+                    <button class="close-modal" id="btn-close-lightbox" title="Close Lightbox">&times;</button>
+                </div>
+            </div>
+            <div class="lightbox-body">
+                <img class="modal-content" id="modal-img" src="" alt="Enlarged View">
+            </div>
+            <div class="lightbox-footer">
+                <span class="lightbox-counter" id="modal-counter">1 / 15</span>
+                <span class="lightbox-instruction">Use Left/Right arrow keys to navigate • Esc to close</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Document Modal -->
-    <div id="doc-modal" class="image-modal">
-        <span class="close-modal" id="close-doc-modal">&times;</span>
-        <iframe class="modal-content doc-iframe" id="doc-iframe" src=""></iframe>
+    <!-- DOCUMENT MODAL: PDF VIEWER -->
+    <div id="doc-modal" class="image-modal" role="dialog" aria-modal="true" aria-label="PDF Document Viewer">
+        <div class="modal-backdrop-blur"></div>
+        <div class="lightbox-container doc-container">
+            <div class="lightbox-header">
+                <span class="lightbox-title" id="doc-modal-title">Executive Summary — VocalPlan Platform Overview</span>
+                <button class="close-modal" id="close-doc-modal" title="Close Document">&times;</button>
+            </div>
+            <div class="lightbox-body doc-body">
+                <iframe class="modal-content doc-iframe" id="doc-iframe" src="" title="PDF Document Viewer"></iframe>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
