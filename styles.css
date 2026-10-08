@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AgendOS / VocalPlan — Premium Product Presentation Stylesheet
+   VocalPlan App — Premium Product Presentation Stylesheet
    Modern 2026 SaaS / Product Design System
    ========================================================================== */
 
@@ -913,7 +913,7 @@ header#main-header.scrolled {
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
-.tag-agendos {
+.tag-agendos, .tag-vocalplan {
     background: rgba(16, 185, 129, 0.12);
     color: #34d399;
     border: 1px solid rgba(16, 185, 129, 0.3);

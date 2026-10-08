@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AgendOS / VocalPlan — Modern Product Presentation Script
+   VocalPlan App — Modern Product Presentation Script
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const slidesData = [
         {
             num: 1,
-            title: "Engineering AgendOS: VocalPlan",
+            title: "VocalPlan App Architecture",
             subtitle: "The Intelligent Calendar Operating System (React 19, TS, Capacitor 8)",
             src: "assets/agendos/slide_01.webp",
             fallback: "assets/agendos/slide_01.png"
         },
         {
             num: 2,
-            title: "The Wrapper vs. The AgendOS Solution",
+            title: "The Wrapper vs. The VocalPlan App Solution",
             subtitle: "Pushing intelligence to the edge & eliminating cloud latency bottlenecks",
             src: "assets/agendos/slide_02.webp",
             fallback: "assets/agendos/slide_02.png"
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             num: 13,
-            title: "The Full Capability Grid of AgendOS",
+            title: "The Full Capability Grid of VocalPlan App",
             subtitle: "20 core capabilities across Voice & AI, Calendar, Storage & Sync, and Security",
             src: "assets/agendos/slide_13.webp",
             fallback: "assets/agendos/slide_13.png"
@@ -411,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnOpenPdfDoc.addEventListener('click', () => {
             openDocModal(
                 "assets/Files/AgendOS_System_Architecture.pdf",
-                "AgendOS System Architecture — 15-Slide Master Deck"
+                "VocalPlan App System Architecture — 15-Slide Master Deck"
             );
         });
     }
